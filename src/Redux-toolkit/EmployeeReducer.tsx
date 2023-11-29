@@ -9,13 +9,11 @@ const employeeSlice = createSlice({
   initialState,
   reducers: {
     addEmployee: (state, action) => {
-      console.log(action.payload);
       action.payload.id = state.length + 1;
       state.push(action.payload);
       alert("Employee added");
     },
     editEmployee: (state, action) => {
-      console.log("call edkt");
       const index = state.findIndex((users) => users.id === action.payload.id);
 
       state[index] = action.payload;

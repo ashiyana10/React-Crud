@@ -1,7 +1,7 @@
 export class employee {
   id!: number;
   fullName!: string;
-  birthDate!: string;
+  birthDate!: Date;
   department!: string;
   experience!: number;
 }

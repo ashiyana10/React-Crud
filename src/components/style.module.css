@@ -14,3 +14,7 @@ tr {
 .heightvh{
      height: 100vh;
 }
+
+.errorMsg{
+     font-size: 14px;
+}

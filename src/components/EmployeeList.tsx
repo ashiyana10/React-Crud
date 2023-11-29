@@ -19,7 +19,6 @@ export default function EmployeeList() {
     setEmployeeData(store.getState().persistReducers.employeeSlice);
     store.subscribe(() => {
       setEmployeeData(store.getState().persistReducers.employeeSlice);
-      console.log(employeeData);
     });
   }, [employeeData]);
   return (
@@ -27,7 +26,7 @@ export default function EmployeeList() {
       className={`m-auto d-flex align-items-center justify-content-center ${styles.heightvh}`}
     >
       <div className="w-75 table-responsive">
-        <h2 className={styles.center}>employeeList</h2>
+        <h2 className={styles.center}>Employee List</h2>
         <table className={`mt-3 ${styles.center} table`}>
           <thead>
             <tr>
@@ -45,25 +44,25 @@ export default function EmployeeList() {
                 <td colSpan={6}>No Employee</td>
               </tr>
             )}
-            {employeeData.map((employee: employee) => (
-              <tr key={employee.id}>
-                <td>{employee.id}</td>
-                <td>{employee.fullName}</td>
-                <td>{employee.birthDate}</td>
-                <td>{employee.department}</td>
-                <td>{employee.experience}</td>
-                <td>
-                  <Link to={`editEmployee/${employee.id}`}>Edit</Link>
-                  <a
-                    type="button"
-                    onClick={() => deleteEmployeeFun(employee.id)}
-                    className="ms-3"
-                  >
-                    Delete
-                  </a>
-                </td>
-              </tr>
-            ))}
+              {employeeData.map((employee: employee) => (
+                <tr key={employee.id}>
+                  <td>{employee.id}</td>
+                  <td>{employee.fullName}</td>
+                  <td>{employee.birthDate}</td>
+                  <td>{employee.department}</td>
+                  <td>{employee.experience}</td>
+                  <td>
+                    <Link to={`editEmployee/${employee.id}`}>Edit</Link>
+                    <a
+                      type="button"
+                      onClick={() => deleteEmployeeFun(employee.id)}
+                      className="ms-3"
+                    >
+                      Delete
+                    </a>
+                  </td>
+                </tr>
+              ))}
           </tbody>
         </table>
         <p className={styles.center}>
