@@ -9,7 +9,7 @@ const employeeSlice = createSlice({
   initialState,
   reducers: {
     addEmployee: (state, action) => {
-      action.payload.id = state.length + 1;
+      action.payload.id = state[length].id + 1;
       state.push(action.payload);
       alert("Employee added");
     },
